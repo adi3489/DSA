@@ -1,5 +1,5 @@
 import java.util.*;
-public class math {
+public class countDigits {
 
 
     public static int countDigits(int number) {
