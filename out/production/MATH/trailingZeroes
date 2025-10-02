@@ -1,0 +1,50 @@
+public static int countTrailingZeros(int n) {
+    int count = 0;
+    for (int i = 5; n / i > 0; i *= 5) {
+        count += n / i;
+    }
+    return count;
+}
+
+
+
+Multiples of 5 → contribute at least 1 five.
+
+Multiples of 25 → contribute at least 2 fives.
+
+Multiples of 125 → contribute at least 3 fives.
+
+Multiples of 625 → contribute at least 4 fives.
+… and so on.
+
+Step 1: Normal 5’s
+
+When we divide by 5, we are counting numbers like:
+5, 10, 15, 20, 25, 30 …
+
+Each of these gives at least one 5.
+Example: 25 = 5 × 5 → it actually has two 5’s inside it.
+But our first division (n/5) only counted it once.
+
+Step 2: Extra 5’s
+
+So how do we count the “extra” 5 in numbers like 25 or 125?
+That’s why we divide again by 25, 125, 625...
+
+Example with 25!
+
+25! = 1 × 2 × 3 × … × 25
+
+Now let’s count 5’s:
+
+Divide by 5: 25 ÷ 5 = 5
+→ numbers 5, 10, 15, 20, 25 each give one 5.
+
+Divide by 25: 25 ÷ 25 = 1
+→ the number 25 has an extra 5 (because 25 = 5 × 5).
+
+👉 Total 5’s = 5 + 1 = 6
+
+So, 25! ends with 6 zeros. ✅
+
+it is confusing .....
